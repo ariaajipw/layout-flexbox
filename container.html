@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      corePlugins: {
+        container: false
+      },
+      plugins: [
+        function ({ addComponents, theme }) {
+          addComponents({
+            '.container': {
+              maxWidth: '100%',
+              '@screen sm': {
+                maxWidth: '550px',
+                margin: '0 auto',
+              },
+              '@screen md': {
+                padding: '1rem',
+                maxWidth: '768px',
+              },
+              '@screen lg': {
+                maxWidth: '1280px',
+              },
+              '@screen xl': {
+                padding: '40px',
+                maxWidth: '1440px',
+              },
+            }
+          })
+        }
+      ]
+    }
+  </script>
+</head>
+
+<body>
+  <div class="container py-8">
+    <div class="bg-black h-4"></div>
+  </div>
+</body>
+
+</html>
